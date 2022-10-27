@@ -5,9 +5,10 @@ import os
 screen = Screen()
 screen.setup(800,600)
 screen.bgpic(os.path.join('../styles/draw_game_style', 'screentry2.gif'))
-# screen.register_shape(os.path.join('draw_game_style', 'xx (1).gif'))
+
 t = Turtle("arrow")
-t.speed(0)
+t.speed(-1)
+
 black = "black"
 red = "red"
 green = "green"
@@ -155,7 +156,7 @@ def dragging(x,y):
 
 def upload():
     screen.reset()
-    with open("draw_game_download", "r") as r:
+    with open("draw_game_download_button", "r") as r:
         lines = r.readlines()
         t.forward(10)
         for lin in lines:
@@ -207,9 +208,9 @@ def upload():
                 pass
 
 def download():
-    with open("draw_game_download", "w") as w:
+    with open("draw_game_download_button", "w") as w:
         w.write("")
-    with open("draw_game_download", "a") as a:
+    with open("draw_game_download_button", "a") as a:
         for i in start_list:
             a.write(i + "\n")
 
